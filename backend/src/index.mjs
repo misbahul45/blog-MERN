@@ -12,6 +12,7 @@ const MONGO_URL=process.env.MONGO_URL
 
 app.use(cors());
 app.use(express.json())
+app.use(express.urlencoded({ extended:true }))
 app.use(blogRouter)
 app.use("/", (req, res) => {
     res.redirect('/api/blogs');

@@ -3,17 +3,21 @@ import mongoose from "mongoose"
 const Schema=mongoose.Schema
 
 const blogSchema=new Schema({
+    image:{
+        type:Buffer,
+        required:true
+    },
     title:{
         type:String,
-        require:true
+        required:true
     },
     category:{
         type:String,
-        require:true
+        required:true
     },
     body:{
         type:String,
-        require:true
+        required:true
     }
 },{
     timestamps:true,
