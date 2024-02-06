@@ -32,20 +32,9 @@ const Navbar = () => {
         </div>
         <Nav style={style} router={router} />
         <div className={`flex-1 flex justify-center items-center ${style?"opacity-0":"opacity-100"}`}>
-            {authenticated?
-                <Link href={'/posts/create'}>
-                    <button className={`${robotoSemiBold.className} text-lg text-slate-300 w-24 py-1.5 rounded-md bg-gray-800 border-2 border-slate-600`}>Create</button>
-                </Link>
-                :
-                <div className={`flex items-center gap-4 transition-all duration-300`}>
-                    <Link href={'/auth/login'}>
-                        <button className="w-24 py-2 bg-slate-900 text-slate-100 font-semibold ring-2 ring-slate-500 rounded-lg drop-shadow-lg hover:scale-105 transition-all duration-300">Login</button>
-                    </Link>
-                    <Link href={'/auth/signup'}>
-                        <button className="w-24 py-2 bg-slate-700 text-slate-100 font-semibold ring-2 ring-slate-500 rounded-lg drop-shadow-lg hover:scale-105 transition-all duration-300">Sign Up</button>
-                    </Link>
-                </div>
-            }
+            <Link href={'/posts/create'}>
+                <button className={`${robotoSemiBold.className} text-lg text-slate-300 w-24 py-1.5 rounded-md bg-gray-800 border-2 border-slate-600`}>Create</button>
+            </Link>
         </div>
     </header>
   )

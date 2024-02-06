@@ -99,6 +99,7 @@ const blogRouter=Router()
             }
         }
     )
+    
     blogRouter.patch("/api/blogs/:idPost",
         param('idPost').isString().notEmpty(),
         blogPatchValidator(),
@@ -130,7 +131,7 @@ const blogRouter=Router()
             console.log(idPost)
             if(idPost){
                 try{
-                    const isDelete=await Blog.findByIdAndDelete(idPost).exec()
+                    const isDelete = await Blog.findOneAndDelete({ _id: idPost }).exec();
                     if(isDelete){
                         return res.send({ message:"Successed Delete" })
                     }else{
